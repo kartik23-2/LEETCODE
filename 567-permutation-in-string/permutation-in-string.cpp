@@ -21,7 +21,7 @@ public:
         for(int i =0;i<s1.size();i++){
             p[s2[i]]++;
         }
-        if(check(need,p)){
+        if(need == p){
             return true;
         }
         int low=0;
@@ -30,7 +30,7 @@ public:
             p[s2[high]]++;
             p[s2[low]]--;
             low++;
-            if(check(need,p)){
+            if(need == p){
                 return true;
             }
             

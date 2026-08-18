@@ -12,7 +12,7 @@ public:
             
             hash[s[high]]++;
             
-            while(hash[s[high]]>1){
+            while(hash.size()<high-low+1){
                 hash[s[low]]--;
                 if(hash[s[low]]==0){
                     hash.erase(s[low]);

@@ -1,7 +1,7 @@
 class Solution {
 public:
     int pivotIndex(vector<int>& nums) {
-        vector<int> prefix(nums.size(),0);
+        int left=0;
         
         int sum=0;
         
@@ -10,13 +10,13 @@ public:
         }
         int suffix=sum;
 
-        if(prefix[0]==suffix-nums[0]){
+        if(left==suffix-nums[0]){
             return 0;
         }
         for(int i=1;i<nums.size();i++){
-            prefix[i]=prefix[i-1]+nums[i-1];
-            suffix=sum-prefix[i]-nums[i];
-            if(prefix[i]==suffix){
+            left=left+nums[i-1];
+            suffix=sum-left-nums[i];
+            if(left==suffix){
                 return i;
             }
         }
